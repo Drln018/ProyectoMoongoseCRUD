@@ -1,0 +1,38 @@
+<%- include('layout/header.ejs') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card shadow">
+                <div class="card-header bg-primary">
+                    <h3 class="text-alight">Add New Movie</h3> <!-- Cambiado el título -->
+                </div>
+                <div class="card-body p-4">
+                    <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="title">Title</label> <!-- Cambiado el campo "Name" a "Title" -->
+                            <input type="text" name="title" class="form-control form-control-lg" id="title" placeholder="Enter Title" autocomplete="off" required/> 
+                        </div>
+                        <div class="mb-3">
+                            <label for="year">Year</label> <!-- Cambiado el campo "Email" a "Year" -->
+                            <input type="number" name="year" class="form-control form-control-lg" id="year" placeholder="Enter Year" autocomplete="off" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="genre">Genre</label> <!-- Cambiado el campo "Phone" a "Genre" -->
+                            <input type="text" name="genre" class="form-control form-control-lg" id="genre" placeholder="Enter Genre" autocomplete="off" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image">Image</label>
+                            <input type="file" name="image" class="form-control form-control-lg" id="image" placeholder="Enter Image" autocomplete="off" required/>
+                        </div>
+                        <div class="mb-3 d-grid">
+                            <input type="submit" name="submit" value="Add Movie" class="btn btn-primary btn-lg"/> <!-- Cambiado el botón a "Add Movie" -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer.ejs') %>

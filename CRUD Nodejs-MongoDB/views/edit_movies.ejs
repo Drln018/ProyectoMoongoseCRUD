@@ -1,0 +1,43 @@
+<%- include('layout/header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card shadow">
+                <div class="card-header bg-success">
+                    <h3 class="text-alight">Edit Movie (<%= movie.title %>)</h3> <!-- Cambiado el título -->
+                </div>
+                <div class="card-body p-4">
+                    <form action="/update/<%= movie._id %>" method="post" id="update-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" class="form-control form-control-lg" id="title" value="<%= movie.title %>" autocomplete="off" required/> 
+                        </div>
+                        <div class="mb-3">
+                            <label for="year">Year</label>
+                            <input type="text" name="year" class="form-control form-control-lg" id="year" value="<%= movie.year %>" autocomplete="off" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="genre">Genre</label>
+                            <input type="text" name="genre" class="form-control form-control-lg" id="genre" value="<%= movie.genre %>" autocomplete="off" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Selecciona imagen</label>
+                            <input class="form-control form-control-lg" type="file" name="image" id="image"/>
+                            <img src="<%= movie.image %>" width="50" class="img-thumbnail mt-1">
+                        </div>
+                        <input type="hidden" name="old_image" value="<%= movie.image %>">
+                        <div class="mb-3 d-grid">
+                            <input type="submit" name="submit" value="Update Movie" class="btn btn-success btn-lg"/>
+                        </div>
+                        <script>
+                            console.log("Ruta de la imagen: <%= movie.image %>");
+                        </script>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer') %>
